@@ -5,14 +5,14 @@ import { AuthContext } from "../Context/AuthContext";
 import { useParams } from "react-router-dom";
 
 const Edit = () => {
-  const [title, setTitle] = useState("");
-  const [postContent, setPostContent] = useState("");
   const [postImage, setPostImage] = useState("");
   const { currentUser, users } = useContext(AuthContext);
   const { updatePost, posts } = usePost();
 
   const { id } = useParams();
   const post = posts.find((post) => post.id === id);
+  const [title, setTitle] = useState(post.title || "");
+  const [postContent, setPostContent] = useState(post.postContent || "");
 
   const handleSubmit = (e) => {
     e.preventDefault();
