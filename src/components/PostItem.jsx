@@ -6,9 +6,9 @@ const PostItem = ({ post, users }) => {
     <Link
       to={`/post/${post.id}`}
       key={post.id}
-      className="w-full  h-72 flex flex-col  lg:flex-col-1    border border-gray-300   "
+      className="w-full  h-80 flex flex-col  lg:flex-col-1    border border-gray-300   "
     >
-      <img className="w-full h-48  bg-cover" src={post.postImage} alt="" />
+      <img className="w-full h-48  object-cover" src={post.postImage} alt="" />
       <div className="p-2">
         <h1 className="font-semibold text-2xl">{post.title}</h1>
 
