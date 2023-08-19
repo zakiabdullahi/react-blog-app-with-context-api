@@ -22,13 +22,6 @@ const Header = () => {
 
             <Link to="/login"> Login</Link>
             <Link to="/register"> Register</Link>
-
-            {currentUser && (
-              <Link to="/login" onClick={() => logout()}>
-                {" "}
-                Logout
-              </Link>
-            )}
           </ul>
         </div>
       </div>
