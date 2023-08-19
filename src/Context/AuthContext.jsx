@@ -36,6 +36,12 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const logout = () => {
+    dispatch({
+      type: "LOGOUT",
+    });
+  };
+
   const setAuthenticatedUser = () => {
     dispatch({
       type: "ISAUTHENTICATED",
@@ -49,6 +55,7 @@ export const AuthProvider = ({ children }) => {
     currentUser: state.currentUser,
     registerUser,
     checkLogin,
+    logout,
     setAuthenticatedUser,
   };
 
