@@ -32,7 +32,7 @@ const Register = () => {
   };
   return (
     <div className="flex h-screen justify-center items-center">
-      <form className="h-96 w-1/2 " onSubmit={handleSubmit}>
+      <form className="h-96  lg:w-1/2 " onSubmit={handleSubmit}>
         <div className="flex flex-col">
           <label htmlFor="">username</label>
           <input
@@ -73,7 +73,7 @@ const Register = () => {
           />
         </div>
 
-        <button className="bg-blue-400 py-2 px-5 rounded-lg text-white mt-4">
+        <button className="bg-blue-400 w-full lg:w-24 py-2 px-5 rounded-lg text-white mt-4">
           Register
         </button>
       </form>
