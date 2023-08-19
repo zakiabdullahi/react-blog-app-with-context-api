@@ -15,7 +15,7 @@ const CreatePost = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const id = "PostId" + Math.random().toString(16).slice(2);
-    const date = new Date();
+    const date = new Date().toString();
     const authorId = currentUser.id;
     const authorName = currentUser.username;
     console.log(authorName);
