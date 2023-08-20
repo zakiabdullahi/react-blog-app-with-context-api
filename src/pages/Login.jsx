@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useContext, useState } from "react";
 import { AuthContext } from "../Context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const {
@@ -56,9 +56,17 @@ const Login = () => {
           />
         </div>
 
-        <button className="bg-blue-400 w-full lg:w-24  py-2 px-5 rounded-lg text-white mt-4">
-          Login
-        </button>
+        <div className="flex space-x-2">
+          <button className="bg-blue-400 w-full lg:w-24  py-2 px-5 rounded-lg text-white mt-4">
+            Login
+          </button>
+          <Link
+            to="/register"
+            className="bg-blue-400 w-full lg:w-24  py-2 px-5 rounded-lg text-white mt-4"
+          >
+            Register
+          </Link>
+        </div>
       </form>
     </div>
   );

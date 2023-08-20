@@ -3,7 +3,12 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContext";
 
 const Header = () => {
-  const { isAuthenticate, currentUser, logout } = useContext(AuthContext);
+  const { isAuthenticate, currentUser, logout, setAuthenticatedUser } =
+    useContext(AuthContext);
+
+  const toggle = () => {
+    setAuthenticatedUser();
+  };
   return (
     <div className="h-16  fixed top-0 left-0 right-0 bg-white bg-opacity-90  border-b border-gray-200 pt-4 z-10">
       <div className="max-w-4xl mx-auto">
@@ -20,8 +25,17 @@ const Header = () => {
             </Link>
             <Link to="/new">{isAuthenticate ? "CreatePost" : ""}</Link>
 
-            <Link to="/login"> Login</Link>
-            <Link to="/register"> Register</Link>
+            {isAuthenticate ? (
+              <Link onClick={toggle} to="/login">
+                {" "}
+                Logout
+              </Link>
+            ) : (
+              <>
+                <Link to="/login"> Login</Link>
+                <Link to="/register"> Register</Link>
+              </>
+            )}
           </ul>
         </div>
       </div>
