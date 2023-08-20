@@ -2,10 +2,9 @@
 import { useContext, useState } from "react";
 import usePost from "../Context/PostContext";
 import { AuthContext } from "../Context/AuthContext";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Edit = () => {
-  const [postImage, setPostImage] = useState("");
   const { currentUser, users } = useContext(AuthContext);
   const { updatePost, posts } = usePost();
 
@@ -13,11 +12,13 @@ const Edit = () => {
   const post = posts.find((post) => post.id === id);
   const [title, setTitle] = useState(post.title || "");
   const [postContent, setPostContent] = useState(post.postContent || "");
+  const [postImage, setPostImage] = useState(post.postImage || "");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // const id = "PostId" + Math.random().toString(16).slice(2);
-    const date = new Date();
+    const date = new Date().toString();
     const authorId = currentUser.id;
     const updatedPost = {
       id: id,
@@ -31,11 +32,12 @@ const Edit = () => {
     setTitle("");
     setPostContent("");
     setPostImage("");
+    navigate("/post");
   };
 
   return (
     <div className="w-full h-screen  py-16">
-      <h1 className="text-center ">Create Post</h1>
+      <h1 className="text-center ">Edit Post</h1>
       <div className=" flex justify-center items-center">
         <form className="w-1/2 flex flex-col space-y-2" onSubmit={handleSubmit}>
           <input
@@ -60,7 +62,7 @@ const Edit = () => {
             placeholder="imageUrl"
           />
           <button className="w-28 py-2 px-3 bg-indigo-600 text-white rounded-lg">
-            Create
+            Edit
           </button>
         </form>
       </div>

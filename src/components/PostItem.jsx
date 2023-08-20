@@ -17,7 +17,7 @@ const PostItem = ({ post, users }) => {
             Author: {users.filter((u) => u.id === post.authorId)[0].username}
           </span>
           <span>
-            {`Published: ${post.date.split(" ")[0]}
+            {`Published: ${post.date?.split(" ")[0]}
                ${post.date.split(" ")[1]}
                ${post.date.split(" ")[2]}
                ${post.date.split(" ")[3]}
