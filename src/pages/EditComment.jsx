@@ -35,9 +35,9 @@ const EditComment = () => {
   };
 
   return (
-    <div>
-      <div className="w-full flex lg:space-x-4  space-x-2   h-20  py-2 ">
-        <h1 className="">Comments</h1>
+    <div className="h-screen flex  justify-center">
+      <div className="w-1/2 lg:w-full flex flex-col items-center  lg:space-x-4  space-y-2   h-20  py-2 ">
+        <h1>Edit Comment</h1>
         <form className="w-full " onSubmit={handleSubmit}>
           <textarea
             onChange={(e) => setPostContent(e.target.value)}
