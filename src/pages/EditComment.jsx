@@ -35,22 +35,20 @@ const EditComment = () => {
   };
 
   return (
-    <div className="h-screen flex  justify-center">
-      <div className="w-1/2 lg:w-full flex flex-col items-center  lg:space-x-4  space-y-2   h-20  py-2 ">
-        <h1>Edit Comment</h1>
-        <form className="w-full " onSubmit={handleSubmit}>
-          <textarea
-            onChange={(e) => setPostContent(e.target.value)}
-            value={postContent}
-            className="w-full h-48 border border-gray-400"
-          ></textarea>
-          <div className="flex space-x-2 items-center">
-            <button className="w-24 bg-indigo-600 py-2 px-3 text-white rounded-lg text-center ">
-              edit
-            </button>
-          </div>
-        </form>
-      </div>
+    <div className="w-full  flex flex-col lg:items-center  lg:space-x-4  space-y-2     p-4 ">
+      <h1>Edit Comment</h1>
+      <form className="w-full " onSubmit={handleSubmit}>
+        <textarea
+          onChange={(e) => setPostContent(e.target.value)}
+          value={postContent}
+          className="w-full h-48 border border-gray-400"
+        ></textarea>
+        <div className="flex space-x-2 items-center">
+          <button className="w-24 bg-indigo-600 py-2 px-3 text-white rounded-lg text-center ">
+            edit
+          </button>
+        </div>
+      </form>
     </div>
   );
 };
